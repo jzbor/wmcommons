@@ -143,4 +143,40 @@ typedef struct {
 } Systray;
 
 
+/* function declarations */
+int compareclients(const void *a, const void *b);
+void configure(Client *c);
+void copyvalidchars(char *text, char *rawtext);
+void expose(XEvent *e);
+pid_t getparentprocess(pid_t p);
+unsigned int getsystraywidth();
+void grabbuttons(Client *c, int focused);
+void grabkeys(void);
+int isdescprocess(pid_t p, pid_t c);
+void keypress(XEvent *e);
+int loadenv(char *name, char **retval, int *retint, unsigned int *retuint);
+void losefullscreen(Client *sel, Client *c, Monitor *m);
+void mappingnotify(XEvent *e);
+void maprequest(XEvent *e);
+Client *recttoclient(int x, int y, int w, int h);
+void resizebarwin(Monitor *m);
+void resizeclient(Client *c, int x, int y, int w, int h, int bw);
+void resizefloating(Client *c, int nx, int ny, int nw, int nh);
+void resizerequest(XEvent *e);
+void scan(Display *dpy);
+void sigchld(int unused);
+void swallow(Display *dpy, Client *p, Client *c);
+void unswallow(Display *dpy, Client *c);
+void unfocus(Display *dpy, Client *c, int setfocus);
+void unmapnotify(XEvent *e);
+void updatemotifhints(Display *dpy, Client *c);
+void updatenumlockmask(Display *dpy);
+void updatesizehints(Display *dpy, Client *c);
+void updatesystrayicongeom(Display *dpy, Client *i, int w, int h);
+void updatesystrayiconstate(Display *dpy, Client *i, XPropertyEvent *ev);
+void updatetitle(Display *dpy, Client *c);
+void updatewindowtype(Display *dpy, Client *c);
+pid_t winpid(Window w);
+void xrdb(const Arg *arg);
+
 #endif
